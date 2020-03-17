@@ -2,15 +2,15 @@ package area.calculator;
 
 public class AreaXMLOutputter
 {
-    private AreaAggregator areaAgg;
+    private SumProvider sumProvider;
 
-    public AreaXMLOutputter(AreaAggregator arAg)
+    public AreaXMLOutputter(SumProvider sp)
     {
-        this.areaAgg = arAg;
+        this.sumProvider = sp;
     }
 
     public String output()
     {
-        return "<area>" + this.areaAgg.sum() + "</area>";
+        return "<area>" + this.sumProvider.sum() + "</area>";
     }
 }

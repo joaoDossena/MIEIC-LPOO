@@ -4,16 +4,13 @@ package area.calculator;
 import java.util.*;
 import java.util.ArrayList;
 
-public class AreaAggregator
+public class AreaAggregator implements SumProvider
 {
-    private List<Shape> shapes = new ArrayList<>();
+    private List<HasArea> shapes = new ArrayList<>();
 
-    public AreaAggregator()
-    {
+    public AreaAggregator() { }
 
-    }
-
-    public void addShape(Shape shape)
+    public void addShape(HasArea shape)
     {
         shapes.add(shape);
     }
@@ -21,21 +18,8 @@ public class AreaAggregator
     public double sum()
     {
         double sum = 0;
-        for (Shape shape: shapes)
-        {
-            if(shape.getClass().equals(Circle.class))
-            {
-                sum += Math.PI * Math.pow(((Circle) shape).getRadius(), 2);
-            }
-            else if(shape.getClass().equals(Square.class))
-            {
-                sum += Math.pow(((Square) shape).getSide(), 2);
-            }
-            else if(shape.getClass().equals(Ellipse.class))
-            {
-                sum += Math.PI * ((Ellipse) shape).getxRadius() * ((Ellipse) shape).getyRadius();
-            }
-        }
+        for (HasArea shape: shapes)
+           sum += shape.getArea();
         return sum;
     }
 

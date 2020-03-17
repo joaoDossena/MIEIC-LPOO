@@ -1,6 +1,6 @@
 package area.calculator;
 
-public class Shape
+public interface Shape extends Drawable
 {
 
 }
