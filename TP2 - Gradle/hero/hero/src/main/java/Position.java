@@ -18,6 +18,14 @@ public class Position
     public void setX(int x) { this.x = x; }
     public void setY(int y) { this.y = y; }
 
+    public boolean equals(Object o)
+    {
+        if(this == o) { return true; }
+        if(o == null) { return false; }
+        if(this.getClass() != o.getClass()) { return false; }
+        Position p = (Position) o;
+        return this.getX() == p.getX() && this.getY() == p.getY();
+    }
 
 
 }

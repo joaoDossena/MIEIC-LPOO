@@ -6,9 +6,13 @@ import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.graphics.TextGraphics;
+import com.googlecode.lanterna.TextColor;
+import com.googlecode.lanterna.TerminalPosition;
+
 
 
 import java.io.IOException;
+import java.util.Date;
 
 
 
@@ -45,6 +49,22 @@ public class Game {
         return this.arena.processKey(key);
     }
 
+    /*public void GameOver(TextGraphics graphics) throws IOException
+    {
+        graphics.setForegroundColor(TextColor.Factory.fromString("#FF0000"));
+        graphics.putString(new TerminalPosition(81, 12), "GAME ");
+        graphics.putString(new TerminalPosition(81, 13), "OVER!    ");
+        screen.refresh();
+        Date startDate = new Date();
+        Date endDate = new Date();
+        int numSeconds = 0;
+        while (numSeconds < 10) {
+            endDate = new Date();
+            numSeconds = (int)((endDate.getTime() - startDate.getTime()) / 1000);
+        }
+        screen.close();
+    }*/
+
 
     public void run() throws IOException //Runs game
     {
@@ -52,10 +72,18 @@ public class Game {
         {
             this.draw();
             KeyStroke key = screen.readInput();
-            if(this.processKey(key) == 1)
+            int i = this.processKey(key);
+            switch(i)
             {
-                this.screen.close();
+                case 1:
+                    this.screen.close();
+                    break;
+                case 2:
+                    //gameOver();
+                    this.screen.close();
+                    break;
             }
+
             if(key.getKeyType() == KeyType.EOF)
             {
                 break;
