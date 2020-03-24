@@ -19,5 +19,8 @@ public class AppTest {
         test.stringRecipe();
         test.transformerGroup();
         test.transformerComposite();
+        test.happyHour();
+        test.addObserver();
+        test.removeObserver();
     }
 }
