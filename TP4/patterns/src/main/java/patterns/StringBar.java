@@ -10,4 +10,6 @@ public class StringBar extends Bar
     @Override
     public void endHappyHour() { this.happyHour = false; notifyObservers(); }
 
+    public void order(StringDrink drink, StringRecipe recipe) { recipe.mix(drink); }
+
 }

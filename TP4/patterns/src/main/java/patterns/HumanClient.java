@@ -2,16 +2,17 @@ package patterns;
 
 public class HumanClient implements Client
 {
-    @Override
-    public void happyHourStarted(Bar bar) { System.out.println("The bar's happy hour has started!"); }
+    private OrderingStrategy strategy;
+
+    public HumanClient(OrderingStrategy strat) { this.strategy = strat; }
 
     @Override
-    public void happyHourEnded(Bar bar) { System.out.println("The bar's happy hour has ended!"); }
+    public void happyHourStarted(Bar bar) { this.strategy.happyHourStarted((StringBar) bar); }
 
     @Override
-    public void wants(StringDrink drink, StringRecipe recipe, StringBar bar)
-    {
-        
-    }
+    public void happyHourEnded(Bar bar) { this.strategy.happyHourEnded((StringBar) bar); }
+
+    @Override
+    public void wants(StringDrink drink, StringRecipe recipe, StringBar bar) { this.strategy.wants(drink, recipe, bar); }
 
 }

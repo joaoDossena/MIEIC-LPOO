@@ -1,5 +1,6 @@
 package patterns;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class StringRecipe
@@ -15,4 +16,5 @@ public class StringRecipe
             strTransf.execute(drink);
         }
     }
+
 }
