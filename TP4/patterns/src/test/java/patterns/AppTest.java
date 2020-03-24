@@ -17,5 +17,7 @@ public class AppTest {
         test.stringCaseChanger();
         test.stringReplacer();
         test.stringRecipe();
+        test.transformerGroup();
+        test.transformerComposite();
     }
 }
