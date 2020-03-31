@@ -10,6 +10,6 @@
 ## To do:
   - [x] TP1: Git
   - [x] TP2: Hero
-  - [ ]TP3: SOLID Principles (Still have to improve Hero from TP2 using SOLID)
+  - [ ] TP3: SOLID Principles (Still have to improve Hero from TP2 using SOLID)
   - [x] TP4: Design Patterns
-  - [ ]TP5: Refactoring
+  - [x] TP5: Refactoring
