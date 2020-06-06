@@ -1,4 +1,3 @@
-package PACKAGE_NAME;
+public class InvalidTicket extends Exception{
 
-public class InvalidTicket {
 }

@@ -1,4 +1,5 @@
-package PACKAGE_NAME;
+public class Artist extends Act{
 
-public class Artist {
+    public Artist(String name, String country) { super(name, country); }
+
 }
